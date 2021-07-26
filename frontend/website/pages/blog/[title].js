@@ -1,13 +1,27 @@
 import { Component } from "react"
 import Prism from "prismjs"
+import moment from "moment"
 
 import "prismjs/plugins/line-numbers/prism-line-numbers.js"
 import "prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"
 
 import Header from "../../components/header.js"
 import Footer from "../../components/footer.js"
+import HeadMetadata from "../../components/headMetadata.js"
+
+import getBlogPostByUrlTitle from "../../api/getBlogPostByUrlTitle.js"
 
 export default class extends Component {
+  static async getInitialProps ({ query }) {
+    const apiResult = await getBlogPostByUrlTitle(query.title)
+  
+    return {
+      post: apiResult && apiResult.post,
+      getDataError: apiResult && apiResult.getDataError,
+      notFoundError: apiResult && apiResult.notFoundError
+    }
+  }
+
   componentDidMount() {
     Prism.highlightAll()
   }
@@ -15,49 +29,44 @@ export default class extends Component {
   render () {
     return (
       <div className="layout-wrapper">
+        <HeadMetadata
+          title={this.props.post ? this.props.post.seoTitleTag : "Blog Post | Coding Blog"}
+          metaDescription={this.props.post && this.props.post.seoMetaDescription}
+        />
         <Header />
         <div className="blog-post-container">
-          <div className="blog-post-top-section">
-            <h1>Your Blog Post Title</h1>
-            <div className="blog-post-top-meta">
-              <span>02/26/2021</span>
-              <a className="blog-post-top-tag-btn" href="/blog/tags/javascript">
-                <span>javascript</span>
-              </a>
-              <a className="blog-post-top-tag-btn" href="/blog/tags/css">
-                <span>css</span>
-              </a>
-              <a className="blog-post-top-tag-btn" href="/blog/tags/C#">
-                  <span>C#</span>
-              </a>
-            </div>
-          </div>
-          <div className="blog-post-body-content">
-            <div className="blog-post-body-snippet">
-              <nav className="blog-post-body-code-snippet-header">
-                <span>example.js</span>
-              </nav>
-              <pre className="line-numbers language-js">
-                <code className= "js language-js">
+          {
+            this.props.post ?
+            <>
+              <div className="blog-post-top-section">
+                <h1>{this.props.post.title}</h1>
+                <div className="blog-post-top-meta">
+                  <span>{moment.unix(this.props.post.dateTimestamp).format("MMMM Do, YYYY")}</span>
                   {
-                     `
-                     // Set your secret key: remember to switch to your live secret key in production
-                     // See your keys here: https://dashboard.stripe.com/account/apikeys
-           
-                     const stripe = require('stripe')('sk_test_hZIksNuZZMXLLFn8q5LtPDAm00Y6r5kUg7')
-           
-                     (async () => {
-                       const paymentIntent = await stripe.paymentIntents.create({
-                         amount: 1099,
-                         currency: 'usd',
-                       })
-                     })()
-                   `
+                    this.props.post.tags.map((tag, index) => {
+                      return (
+                        <a
+                          className="blog-post-top-tag-btn"
+                          key={index}
+                          href={`/blog/tags/${tag}`}
+                        >
+                          <span>{tag}</span>
+                        </a>
+                      )
+                    })
                   }
-                </code>
-              </pre>
-            </div>
-          </div>
+                </div>
+              </div>
+              <div dangerouslySetInnerHTML={{__html: this.props.post.markdownContent}} className="blog-post-body-content"></div>
+            </> : 
+             <div className="blog-post-get-data-error-msg">
+             {
+               this.props.notFoundError ?
+               <span>Blog post not found.</span> :
+               <span>An error occurred.</span>
+             }
+           </div>
+          }
         </div>
         <Footer />
       </div>

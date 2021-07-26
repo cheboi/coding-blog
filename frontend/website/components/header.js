@@ -7,7 +7,7 @@ export default class extends Component {
         <div className="header-container">
           <div className="header-logo">
             <a href="/">
-              <span className="header-logo-icon">💾</span>
+              <span className="header-logo-icon"> </span>
               <span className="header-logo-text">Cheboi Moses</span>
             </a>
           </div>

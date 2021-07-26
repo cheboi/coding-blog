@@ -1,0 +1,1 @@
+{"c":["webpack"],"r":["pages/blog/tags/[tag]"],"m":["./api/getBlogPostsByTag.js","./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fblog%2Ftags%2F%5Btag%5D&absolutePagePath=E%3A%5Ccoding-blog%5Cfrontend%5Cwebsite%5Cpages%5Cblog%5Ctags%5C%5Btag%5D.js!","./pages/blog/tags/[tag].js"]}
