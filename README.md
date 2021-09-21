@@ -11,6 +11,7 @@ This is a coding-blog website
 <li>MongoDb</li>
 <li>ReactJs</li>
 </ol>
+
 ### `npm run dev`
 
 Runs the app in the development mode.\
