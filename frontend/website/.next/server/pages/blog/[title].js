@@ -59,7 +59,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_getBlogPostByUrlTitle_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../api/getBlogPostByUrlTitle.js */ "./api/getBlogPostByUrlTitle.js");
 
 
-var _jsxFileName = "E:\\coding-blog\\frontend\\website\\pages\\blog\\[title].js";
+var _jsxFileName = "E:\\pr\\coding-blog\\frontend\\website\\pages\\blog\\[title].js";
 
 
 

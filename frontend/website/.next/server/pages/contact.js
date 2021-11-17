@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/footer.js */ "./components/footer.js");
 /* harmony import */ var _components_headMetadata_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/headMetadata.js */ "./components/headMetadata.js");
 
-var _jsxFileName = "E:\\coding-blog\\frontend\\website\\pages\\contact.js";
+var _jsxFileName = "E:\\pr\\coding-blog\\frontend\\website\\pages\\contact.js";
 
 
 
