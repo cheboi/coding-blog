@@ -59,31 +59,31 @@ export default class extends Component {
             <div className="homepage-projects-list">
               <div className="homepage-project">
                 <h3>
-                  <a href="https://github.com/discourse/discourse">
+                  <a href="https://github.com">
                     <div className="homepage-project-icon">📞</div>
                     <div className="homepage-project-title">Discourse</div>
                   </a>
                 </h3>
                 <p>A platform for community discussion. Free, open, simple.</p>
                 <div className="homepage-project-btns">
-                  <a className="homepage-project-view-btn" href="https://github.com/discourse/discourse">View</a>
+                  <a className="homepage-project-view-btn" href="https://github.com">View</a>
                 </div>
               </div>
               <div className="homepage-project">
                 <h3>
-                  <a href="https://github.com/nmajor25/seconds-converter">
+                  <a href="https://github.com">
                     <div className="homepage-project-icon">⌛</div>
-                    <div className="homepage-project-title">Seconds Converter</div>
+                    <div className="homepage-project-title">Time Converter</div>
                   </a>
                 </h3>
                 <p>Convert milliseconds or seconds to days, hours, minutes, and seconds in node.js.</p>
                 <div className="homepage-project-btns">
-                  <a className="homepage-project-view-btn" href="https://github.com/nmajor25/seconds-converter">View</a>
+                  <a className="homepage-project-view-btn" href="https://github.com">View</a>
                 </div>
               </div>
               <div className="homepage-project">
                 <h3>
-                  <a href="https://github.com/showdownjs/showdown">
+                  <a href="https://github.com">
                     <div className="homepage-project-icon">⌛</div>
                     <div className="homepage-project-title">Showdown</div>
                   </a>
