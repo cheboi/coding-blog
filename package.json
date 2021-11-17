@@ -1,0 +1,19 @@
+{
+  "name": "coding-blog",
+  "version": "1.0.0",
+  "description": "This is a coding-blog website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheboi/coding-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cheboi/coding-blog/issues"
+  },
+  "homepage": "https://github.com/cheboi/coding-blog#readme"
+}
